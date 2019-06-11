@@ -1,0 +1,9 @@
+System.setProperty(“webdriver.firefox.bin”,”D:\Mozilla Firefox\firefox.exe”);
+
+
+System.setProperty(“webdriver.chrome.driver”,”D:\chromedriver\chromedriver.exe”); 
+
+//chrome没有安装在默认路径时，指定chrome.exe的路径
+System.setProperty(“webdriver.chrome.bin”,”C:\Documents and Settings\gongjf\Local Settings\Application Data\Google\Chrome\Application\chrome.exe”); 
+WebDriver driver = new ChromeDriver();
+driver.get(“http://www.baidu.com“);
