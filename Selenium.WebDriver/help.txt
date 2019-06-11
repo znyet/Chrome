@@ -1,0 +1,43 @@
+https://github.com/SeleniumHQ/selenium
+
+https://www.nuget.org/profiles/selenium
+
+http://seleniumhq.github.io/selenium/docs/api/dotnet/
+
+============================================================
+
+http://www.cnblogs.com/Alvin-x/p/3557999.html
+
+http://www.51testing.com/html/66/15050766-865362.html
+http://www.51testing.com/html/66/15050766-865363.html
+
+
+
+========================================================================
+
+string path = @"D:\Chrome-bin-39.0.2171.99";
+
+//string path = @"D:\Chrome-bin-5.x\Application"
+
+var driver = new ChromeDriver(path);
+
+driver.Navigate().GoToUrl("https://www.taobao.com");
+driver.Manage().Window.Maximize();
+
+Thread.Sleep(2000);
+
+var box = driver.FindElementById("q");
+box.SendKeys("电视机");
+
+Thread.Sleep(2000);
+
+var btn = driver.FindElementByXPath("//*[@id=\"J_TSearchForm\"]/div[1]/button");
+
+Actions action = new Actions(driver); //鼠标事件
+action.MoveToElement(btn).ContextClick().Perform();
+
+driver.Keyboard.PressKey(Keys.PageDown); //键盘事件
+
+
+Console.ReadKey();
+
